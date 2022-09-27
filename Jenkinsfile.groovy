@@ -16,7 +16,7 @@ pipeline {
             steps {
                     echo "Current build: ${BUILD_NUMBER}"
                     script {
-                        zip zipFile: '${BUILD_NUMBER}.zip', archive: true, dir: 'Calc/bin/Debug/netcoreapp3.1'
+                        zip zipFile: '${BUILD_NUMBER}.zip', archive: true, dir: ''
                 }
                     archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
             }
