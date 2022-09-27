@@ -15,7 +15,7 @@ pipeline {
         stage('Archive') {
             steps {
                     echo "Current build: ${BUILD_NUMBER}"
-                    archiveArtifacts artifacts: "artifacts\\${BUILD_NUMBER}.zip"
+                    archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
             }
         }
     }
