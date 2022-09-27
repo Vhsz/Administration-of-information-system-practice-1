@@ -14,17 +14,10 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                dir ('C:\\'){
-                    script{
-                        try
-                        {
-                            bat("md atrifacts")
-                        } catch (Exception e){}
-                    }
                     echo "Current build: ${BUILD_NUMBER}"
                     archiveArtifacts artifacts: "artifacts\\${BUILD_NUMBER}.zip"
             }
         }
     }
 }
-}
+
