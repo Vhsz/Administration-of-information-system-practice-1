@@ -15,9 +15,7 @@ pipeline {
         stage('Archive') {
             steps {
                     echo "Current build: ${BUILD_NUMBER}"
-                    script {
-                            zip zipFile: '${BUILD_NUMBER}.zip', archive: true
-                    }
+                    tar file: '${BUILD_NUMBER}.tar.gz', archive: true, compress: true
             }
         }
     }
