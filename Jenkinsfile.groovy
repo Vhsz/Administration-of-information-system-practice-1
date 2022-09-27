@@ -16,7 +16,7 @@ pipeline {
             steps {
                     echo "Current build: ${BUILD_NUMBER}"
                 script {
-                    zip zipFile: "123.zip", archive:false,
+                    zip zipFile: "123.zip", archive:false
             }
         }
     }
