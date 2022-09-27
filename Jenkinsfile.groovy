@@ -6,7 +6,7 @@ pipeline {
             steps {
                 bat "build.bat"
                 script {
-                        zip zipFile: '${BUILD_NUMBER}.zip', archive: true, dir: ''
+                        zip zipFile: '${BUILD_NUMBER}.zip', archive: false, dir: ''
                 }
             }
         }
