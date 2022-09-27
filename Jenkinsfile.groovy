@@ -17,7 +17,7 @@ pipeline {
                      script {
                     zip zipFile: "${BUILD_NUBMER}.zip", archive:false, dir: 'C:\\Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins'
                 }
-                    archiveArtifacts artifacts: "artifacts\\${BUILD_NUMBER}.zip"
+                    archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
         }
     }
 }
