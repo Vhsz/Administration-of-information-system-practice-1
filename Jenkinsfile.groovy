@@ -5,6 +5,9 @@ pipeline {
         stage('build') {
             steps {
                 bat "build.bat"
+                script {
+                        zip zipFile: '${BUILD_NUMBER}.zip', archive: true, dir: ''
+                }
             }
         }
         stage('test') {
@@ -15,9 +18,6 @@ pipeline {
         stage('Archive') {
             steps {
                     echo "Current build: ${BUILD_NUMBER}"
-                    script {
-                        zip zipFile: '${BUILD_NUMBER}.zip', archive: true, dir: ''
-                }
                     archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
             }
         }
