@@ -16,7 +16,7 @@ pipeline {
             steps {
                     echo "Current build: ${BUILD_NUMBER}"
                 script {
-                    zip zipFile: "artifacts\\${BUILD_NUBMER}.zip", archive:fasle, dir: 'C:\\Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins\\Calc\\bin\\Debug\\netcoreapp3.1'
+                    zip zipFile: "${BUILD_NUBMER}.zip", archive:fasle, dir: 'C:\\Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins\\Calc\\bin\\Debug\\netcoreapp3.1'
                 }
             }
         }
