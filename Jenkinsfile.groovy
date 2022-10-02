@@ -21,7 +21,20 @@ pipeline {
 				archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
 			}
 		  }
-    	}   
+    	}
+	    stage('Deploy'){
+		  steps{
+			  dir('C:\\'){
+				  script{
+					  try
+					  {
+						  bat("md C:\\Deploy\\")
+					  }catch(Exception e){}
+				  }
+				  unzip zipFile: "${BUILD_NUMBER}.zip", dir: 'C:\\Deploy'
+			  }
+		  }
+	  }
   }
 	    post {
         always{
