@@ -12,16 +12,17 @@ pipeline {
                 bat "buildTest.bat"
             }
         }
-         stage('Archive') {
-            steps {
-		    echo "Current build: ${BUILD_NUMBER}"
-		    script{
-                    zip zipFile: "${BUILD_NUMBER}.zip", archive:true, dir: 'C:\\Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins\\Calc\\bin\\Debug\\netcoreapp3.1'
-		    }
-	  archiveArtifacts artifacts: "Calc/bin/Debug/netcoreapp3.1/*"
-        }
-}
-   }
+	    
+	    stage('Archive'){
+                steps{
+			dir('C:\\'){
+				echo "Current build: ${BUILD_NUMBER}"
+				zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins\\Calc\\bin\\Debug\\netcoreapp3.1'
+				archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
+			}
+		  }
+    	}   
+  }
 	    post {
         always{
             emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
