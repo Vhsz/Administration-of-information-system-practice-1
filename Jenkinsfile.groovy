@@ -17,7 +17,7 @@ pipeline {
 			dir('C:\\'){
 				echo "Current build: ${BUILD_NUMBER}"
                 script{
-				zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins\\Calc\\bin\\Debug\\netcoreapp3.1'
+				zip zipFile: "${BUILD_NUMBER}.zip", archive:true, dir: 'Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins\\Calc\\bin\\Debug\\netcoreapp3.1'
                 }
                     archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
 			}
