@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
+                echo "Current build: ${BUILD_NUMBER}"
                 script{
                     zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'C:\\Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins'
                 }
