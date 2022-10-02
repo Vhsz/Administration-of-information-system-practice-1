@@ -18,7 +18,7 @@ pipeline {
                 script{
                     zip zipFile: "${BUILD_NUMBER}.zip", archive:false, dir: 'C:\\Users\\Alex\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\TestJankins'
                 }
-                    archiveArtifacts artifacts: "${BUILD_NUMBER}.zip"
+                    archiveArtifacts artifacts: "Calc/bin/Debug/netcoreapp3.1"
         }
     }
 }
