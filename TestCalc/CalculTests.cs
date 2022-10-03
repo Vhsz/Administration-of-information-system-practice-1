@@ -10,7 +10,7 @@ namespace TestCalc
         public void TestMethod1()
         {
             // Arrange
-            var calcul = Calcul.Compute(5, 7, '+')
+            var calcul = Calcul.Compute(5, 7, '+');
             // Assert
             Assert.Equal(13,calcul);
           
