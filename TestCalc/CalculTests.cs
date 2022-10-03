@@ -16,14 +16,6 @@ namespace TestCalc
           
         }
 
-
-        [Fact]
-        public void TestMethod3()
-        {
-            var calcul2 = Calcul.Compute(8, 8, '*');
-            Assert.Equal(64, calcul2);
-        }
-
         [Fact]
         public void TestMethod4()
         {
