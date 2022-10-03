@@ -15,7 +15,27 @@ namespace TestCalc
             Assert.Equal(13,calcul);
           
         }
+        
+        [Fact]
+        public void TestMethod2()
+        {
+            // Arrange
+            var calcul = Calcul.Compute(6, 7, '+');
+            var calcul1 = Calcul.Compute(7, 7, '-');
 
+            Assert.Equal(13, calcul);
+            Assert.Equal(0, calcul1);
+
+        }
+        
+         [Fact]
+        public void TestMethod3()
+        {
+            var calcul2 = Calcul.Compute(8, 8, '*');
+            Assert.Equal(64, calcul2);
+        }
+
+        
         [Fact]
         public void TestMethod4()
         {
