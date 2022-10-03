@@ -16,17 +16,6 @@ namespace TestCalc
           
         }
 
-        [Fact]
-        public void TestMethod2()
-        {
-            // Arrange
-            var calcul = Calcul.Compute(6, 7, '+');
-            var calcul1 = Calcul.Compute(7, 7, '-');
-         
-            Assert.Equal(13, calcul);
-            Assert.Equal(0, calcul1);
-          
-        }
 
         [Fact]
         public void TestMethod3()
